@@ -1,0 +1,673 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.top-header {
+    background-color: white;
+    padding: 24px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 250px;
+    z-index: 100;
+}
+
+.logo {
+    color: #0066cc;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-masuk {
+    background-color: #ffd700;
+    margin-right: 10px;
+}
+
+.btn-daftar {
+    background-color: #ffd700;
+}
+
+.btn-keluar {
+    background-color: #ffd700;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #0066cc;
+    padding: 5px 0;
+    color: white;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar span{
+    color: white;
+    font-size: 28px;
+    text-decoration:none;
+    padding: 20px;
+    display: block;
+    text-align: right;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.nav-group {
+    margin-top: 1rem;
+}
+
+.nav-group span {
+    padding: 0.8rem 2rem;
+    display: block;
+}
+
+.nav-group ul {
+    margin-left: 1rem;
+}
+
+.content {
+    flex: 1;
+    padding: 40px 12rem;
+    margin-left: 250px;
+    margin-top: 60px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.content p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+
+.contact-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 1600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.btn-kirim {
+    background-color: #FFAE00;
+    padding: 0.8rem 2rem;
+}
+
+.btn-kirim:hover {
+    background-color: #FFAE00;
+}
+
+.landing-content h1 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+
+.landing-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #000;
+    text-align: justify;
+}
+
+.landing-text p:last-child {
+    margin-bottom: 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.data-table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+}
+
+/* Add these new styles at the end of the existing CSS file */
+
+.auth-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.auth-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auth-card h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0,102,204,0.1);
+}
+
+.btn-block {
+    display: block;
+    width: 150px;
+    background-color: #FFAE00;
+    padding: 0.8rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+.auth-form input::placeholder {
+    color: #999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.top-header {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    color: #0066cc;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-masuk {
+    background-color: #ffd700;
+    margin-right: 10px;
+}
+
+.btn-daftar {
+    background-color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #0066cc;
+    padding: 2rem 0;
+    color: white;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.nav-group {
+    margin-top: 1rem;
+}
+
+.nav-group span {
+    padding: 0.8rem 2rem;
+    display: block;
+}
+
+.nav-group ul {
+    margin-left: 1rem;
+}
+
+.content {
+    flex: 1;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.btn-kirim {
+    background-color: #ffd700;
+    padding: 0.8rem 2rem;
+}
+
+.btn-kirim:hover {
+    background-color: #ffc700;
+}
+
+.landing-content {
+    top: 0;
+}
+
+.landing-content h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.landing-text {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.landing-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.landing-text p:last-child {
+    margin-bottom: 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1rem 0;
+    }
+
+    .top-header {
+        left: 0;
+        padding: 12px;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px 1rem;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .sidebar span {
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-group ul {
+        margin-left: 0;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    .btn-kirim {
+        width: 100%;
+    }
+
+    .landing-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .auth-container {
+        padding: 1rem;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    .btn-kirim {
+        width: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .product-card img {
+        height: 130px;
+    }
+
+    .product-card h3 {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}
